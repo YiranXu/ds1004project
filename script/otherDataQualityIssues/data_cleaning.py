@@ -19,7 +19,8 @@ if __name__ == "__main__":
 	'''
 
 	sc = SparkContext()
-	crimes = sc.textFile('crime.csv').mapPartitions(lambda x: reader(x))
+
+	crimes = sc.textFile(sys.argv[1], 1).mapPartitions(lambda x: reader(x))
 
 	crimes = crimes.map(lambda line: line[:7]+['OTHER STATE LAWS (NON PENAL LAW)']+line[8:] if line[7]=='OTHER STATE LAWS (NON PENAL LA' else line)
 	crimes = crimes.map(lambda line: line[:7]+['KIDNAPPING & RELATED OFFENSES']+line[8:] if line[7]=='KIDNAPPING AND RELATED OFFENSES' else line)

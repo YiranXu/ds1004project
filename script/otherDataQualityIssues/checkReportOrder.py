@@ -15,7 +15,7 @@ if __name__ == "__main__":
 		return len(a) > 0 and len(b) > 0
 
 	sc = SparkContext()
-	lines_crime = sc.textFile('crime_cleaned').map(lambda x: x.split('/t'))
+	lines_crime = sc.textFile('crime_cleaned.out').map(lambda x: x.split('/t'))
 
 	FR_DT = lines_crime.map(lambda x: (to_datetime(x[1]),to_datetime(x[5]))if exist(x[1],x[5]) else (-1,-1)) 
 

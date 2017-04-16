@@ -23,7 +23,7 @@ if __name__ == "__main__":
 		return len(a) > 0 and len(b) > 0 and len(c)>0 and len(d)>0
 
 	sc = SparkContext()
-	lines_crime = sc.textFile('crime_cleaned').map(lambda x: x.split('/t'))
+	lines_crime = sc.textFile('crime_cleaned.out').map(lambda x: x.split('/t'))
 
 	FR_DT = lines_crime.map(lambda x: (to_datetime(x[1]+' '+x[2],True),to_datetime(x[3]+' '+x[4], True)) if exist(x[1],x[2],x[3],x[4]) else ((to_datetime(x[1]),to_datetime(x[3])) if exist(x[1],x[3]) else (1,1)))
 	output = FR_DT.map(lambda x: 'valid order' if x[0]<x[1] else ('invalid order' if x[1]<x[0] else 'not all exist'))

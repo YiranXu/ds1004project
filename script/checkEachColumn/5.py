@@ -18,13 +18,13 @@ if __name__ == "__main__":
 			return False
 
 	sc = SparkContext()
-	lines_crime = sc.textFile('crime_cleaned').map(lambda x: x.split('/t'))
+	lines_crime = sc.textFile('crime_cleaned.out').map(lambda x: x.split('/t'))
 
 	FR_DT = lines_crime.map(lambda line: line[4])
 	FR_DT = FR_DT.map(lambda x: [x, 'DATETIME', 'ending time of occurrence', 'NULL'] if len(x)==0 else ([x, 'DATETIME', 'ending time of occurrence', 'VALID'] if is_valid(x) else [x, 'DATETIME', 'ending time of occurrence', 'INVALID']))
 
 	output = FR_DT.map(lambda x: ' '.join(x))
 
-	output.saveAsTextFile("c5.out")
+	output.saveAsTextFile("5.out")
 
 	sc.stop()
