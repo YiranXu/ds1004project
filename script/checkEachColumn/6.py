@@ -14,7 +14,7 @@ if __name__ == "__main__":
 		return lower < datetime.datetime.strptime(date_string,"%m/%d/%Y") and upper > datetime.datetime.strptime(date_string,"%m/%d/%Y")
 
 	sc = SparkContext()
-	lines_crime = sc.textFile('crime_cleaned.out').map(lambda x: x.split('/t'))
+	lines_crime = sc.textFile(sys.argv[1]).map(lambda x: x.split('/t'))
 
 	FR_DT = lines_crime.map(lambda line: line[5])
 	FR_DT = FR_DT.map(lambda x: [x, 'DATETIME', 'reporting date', 'NULL'] if len(x)==0 else ([x, 'DATETIME', 'reporting date', 'VALID'] if is_valid(x) else [x, 'DATETIME', 'reporting date', 'INVALID']))
