@@ -9,7 +9,7 @@ import datetime
 if __name__ == "__main__":
 
 	upper = datetime.datetime.strptime("01/01/2017","%m/%d/%Y")
-	lower = datetime.datetime.strptime("12/31/1950","%m/%d/%Y")
+	lower = datetime.datetime.strptime("12/31/1850","%m/%d/%Y")
 	def is_valid(date_string):
 		return lower < datetime.datetime.strptime(date_string,"%m/%d/%Y") and upper > datetime.datetime.strptime(date_string,"%m/%d/%Y")
 
