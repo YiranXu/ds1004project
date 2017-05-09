@@ -29,5 +29,14 @@ spark-submit checkTimeOrder.py crime_cleaned.out
 spark-submit checkReportOrder.py crime_cleaned.out
 ```
 ## Plots
+For part1:
 We used GroupBy method in pyspark.sql to get summaries of data.
 We plotted those summaries using Tableau Software.
+
+
+For part2:
+Run"groupbyYear.py" in pyspark.
+Run code like **.ipynb in ipython notebook.
+
+## Data
+You can find data needed to generate plots. 
