@@ -35,8 +35,10 @@ We plotted those summaries using Tableau Software.
 
 
 For part2:
+We created a pyspark.sql dataframe, then mainly used GroupBy method to get summaries of the whole data set. Then we did the analysis and visualization using python and Tableau. For example, 
+
 Run"groupbyYear.py" in pyspark.
 Run code like **.ipynb in ipython notebook.
 
 ## Data
-You can find data needed to generate plots. 
+After getting summaries of the crime dataset using spark and downloading other datasets from other websites, we performed some analysis and data transformation. So we only put the final step data in this repo, which you can find in the 'data' directory to generate plots. 
