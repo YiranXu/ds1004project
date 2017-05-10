@@ -35,6 +35,8 @@ We plotted those summaries using Tableau Software.
 
 
 For part2:
+We created a pyspark.sql dataframe, then mainly used GroupBy method to get summaries of the whole data set. Then we did the analysis and visualization using python and Tableau. For example, 
+
 Run"groupbyYear.py" in pyspark.
 Run code like **.ipynb in ipython notebook.
 
