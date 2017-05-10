@@ -41,4 +41,4 @@ Run"groupbyYear.py" in pyspark.
 Run code like **.ipynb in ipython notebook.
 
 ## Data
-After getting summaries of the crime dataset using spark and downloading other datasets from other websites, we performed some analysis and data transformation. So we only put the final step data in this repo, and you can find the in the 'data' directory to generate plots. 
+After getting summaries of the crime dataset using spark and downloading other datasets from other websites, we performed some analysis and data transformation. So we only put the final step data in this repo, which you can find in the 'data' directory to generate plots. 
